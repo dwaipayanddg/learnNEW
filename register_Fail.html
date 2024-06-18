@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+	<title>Login SignUp</title>
+	<link rel="stylesheet" type="text/css" href="loginStyle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- It will redirect to the Home Page after submitting the form -->
+  <script>
+  $(document).ready(function(){
+    $("form").submit(function(){
+     
+    });
+  });
+  </script>
+</head>
+<body>
+	<div class="form-box">
+		<div class="button-box">
+			<div id="btn"></div>
+			<button type="button" class="toggle-btn" id="log" onclick="login()" style="color: #fff;">Log In</button>
+			<button type="button" class="toggle-btn" id="reg" onclick="register()">Register</button>
+		</div>
+		<div class="social-icons">
+			<img src="images/icon/fb2.png">
+			<img src="images/icon/insta2.png">
+			<img src="images/icon/tt2.png">
+		</div>
+		
+		<!-- Login Form -->
+    
+		<form id="login" class="input-group" action="login_process.php" method="POST">
+			<div class="inp">
+				<img src="images/icon/user.png"><input type="text" id="email" name="email" class="input-field" placeholder="Username or Phone Number" style="width: 88%; border:none;" required="required">
+			</div>
+			<div class="inp">
+				<img src="images/icon/password.png"><input type="password" id="password" name="password" class="input-field" placeholder="Password" style="width: 88%; border: none;" required="required">
+			</div>
+			<div>
+            
+			<button style="margin-top: 30px;"   type="submit" class="submit-btn">Log In</button>
+            </div> 
+            <div class="fail">
+                <br>
+                <h4 style="margin-left: 75px;" >Email already exists</h4>
+                <h4 style="margin-left: 93px;">Login Instead</h4>
+                </div>   
+
+		</form>
+        
+        
+
+		
+		
+		<!-- Registration Form -->
+		<form id="register" class="input-group" action="register.php" method="POST">
+			<input type="text" id="name" name="name" class="input-field" placeholder="Full Name" required="required">
+			<input type="email" id="email" name="email" class="input-field" placeholder="Email Address" required="required">
+			<input type="password" id="password" name="password" class="input-field" placeholder="Create Password" required="required">
+			
+			<input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()">I agree to the Terms & Conditions
+			<button type="submit" id="btnSubmit" class="submit-btn reg-btn">Register</button>
+		</form>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
